@@ -13,13 +13,15 @@ using namespace std;
 int main(){
     
     //Creación del primer obejto de Jugador Nacional
-    JugadorNacional eduardoNa("Eduardo",20,4.5);
+    JugadorNacional eduardoNa("Eduardo",20,4.5,6700);
     
     cout<<"El primer jugador Nacional es "<< eduardoNa.get_nombre()<<endl;
     cout<<"Edad: "<<eduardoNa.get_edad()<<endl;
     eduardoNa.set_estrellas(4.7);//Demostración del setter
     cout<<"Estrellas: "<<eduardoNa.get_estrellas()<<" de 5.0"<<endl;
+    cout<<"Costo del contrato: "<<eduardoNa.get_contrato()<<endl;
     cout<<endl;
+
     
     //Creacion del primer obejto de Jugador Internacional
     JugadorInternacional michaelI("Michael", 21, 4.2, 7800);
@@ -27,8 +29,8 @@ int main(){
     cout<<"El primer jugador Internacional es "<< michaelI.get_nombre()<<endl;
     cout<<"Edad: "<<michaelI.get_edad()<<endl;
     cout<<"Estrellas: "<<michaelI.get_estrellas()<<" de 5.0"<<endl;
-    michaelI.set_colegiatura(8200); //Demostracion del setter
-    cout<<"Costo de la beca: "<<michaelI.get_colegiatura()<<endl;
+    michaelI.set_contrato(8200); //Demostracion del setter
+    cout<<"Costo del contrato: "<<michaelI.get_contrato()<<endl;
     cout<<endl;
     
     //Creacion del primer obejto de Jugador Novato

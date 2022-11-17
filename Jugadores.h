@@ -20,20 +20,23 @@ private:
     string nombre;
     int edad;
     float estrellas;
+    int contrato;
     
 public:
     
-    JugadorNacional():nombre(""),edad(0),estrellas(0.0){};
-    JugadorNacional(string nameN,int ageN, float ratingN):nombre(nameN),edad(ageN),estrellas(ratingN){};
+    JugadorNacional():nombre(""),edad(0),estrellas(0.0),contrato(0){};
+    JugadorNacional(string nameN,int ageN, float ratingN, int contratoN):nombre(nameN),edad(ageN),estrellas(ratingN),contrato(contratoN){};
     
     string get_nombre();
     int get_edad();
     float get_estrellas();
+    int get_contrato();
 
     
     void set_nombre(string);
     void set_edad(int);
     void set_estrellas(float);
+    void set_contrato(int);
  
     
     
@@ -51,6 +54,9 @@ float JugadorNacional::get_estrellas(){
     return estrellas;
 }
 
+int JugadorNacional::get_contrato(){
+    return contrato;
+}
 
 void JugadorNacional::set_nombre(string nameN){
     nombre=nameN;
@@ -62,7 +68,9 @@ void JugadorNacional::set_edad(int ageN){
 void JugadorNacional::set_estrellas(float ratingN){
     estrellas=ratingN;
 }
-
+void JugadorNacional::set_contrato(int contratoN){
+contrato=contratoN;
+}
 
 class JugadorInternacional{
     
@@ -71,21 +79,21 @@ private:
     string nombre;
     int edad;
     float estrellas;
-    int colegiatura;
+    int contrato;
 
 public:
-    JugadorInternacional():nombre(""),edad(0),estrellas(0.0),colegiatura(0.0){};
-    JugadorInternacional(string nameI,int ageI, float ratingI, int colegiaturaI):nombre(nameI),edad(ageI),estrellas(ratingI),colegiatura(colegiaturaI){};
+    JugadorInternacional():nombre(""),edad(0),estrellas(0.0),contrato(0.0){};
+    JugadorInternacional(string nameI,int ageI, float ratingI, int contratoI):nombre(nameI),edad(ageI),estrellas(ratingI),contrato(contratoI){};
     
     string get_nombre();
     int get_edad();
     float get_estrellas();
-    int get_colegiatura();
+    int get_contrato();
     
     void set_nombre(string);
     void set_edad(int);
     void set_estrellas(float);
-    void set_colegiatura(int);
+    void set_contrato(int);
     
 };
     
@@ -98,8 +106,8 @@ int JugadorInternacional::get_edad(){
 float JugadorInternacional::get_estrellas(){
     return estrellas;
 }
-int JugadorInternacional::get_colegiatura(){
-    return colegiatura;
+int JugadorInternacional::get_contrato(){
+    return contrato;
 }
 
 void JugadorInternacional::set_nombre(string nameI){
@@ -111,8 +119,8 @@ void JugadorInternacional::set_edad(int ageI){
 void JugadorInternacional::set_estrellas(float ratingI){
     estrellas=ratingI;
 }
-void JugadorInternacional::set_colegiatura(int colegiaturaI){
-    colegiatura=colegiaturaI;
+void JugadorInternacional::set_contrato(int contratoI){
+    contrato=contratoI;
 }
 
 class JugadorNovato{
@@ -165,5 +173,6 @@ void JugadorNovato::set_estrellas(float rating){
 void JugadorNovato::set_colegiatura(int beca){
     colegiatura=beca;
 }
+
 #endif /* Jugadores_h */
 
