@@ -10,169 +10,191 @@
 
 #include <stdio.h>
 #include <string>
+#include <sstream>
+
 
 using namespace std;
 
-class JugadorNacional{
+//Creamos la clase padre de Jugador
+class Jugador{
     
-private:
-    
+protected:
+
+//Sus atributos serán nombre,edad,estrellas y si esta lastimado o no
     string nombre;
     int edad;
     float estrellas;
-    int contrato;
+    bool lastimado;
     
 public:
-    
-    JugadorNacional():nombre(""),edad(0),estrellas(0.0),contrato(0){};
-    JugadorNacional(string nameN,int ageN, float ratingN, int contratoN):nombre(nameN),edad(ageN),estrellas(ratingN),contrato(contratoN){};
+//Constructor vacio y constructor que si recibe parametros
+    Jugador():nombre(""),edad(0),estrellas(0.0),lastimado(false){};
+    Jugador(string nom,int ed, float est, bool las):nombre(nom),edad(ed),estrellas(est),lastimado(las){};
     
     string get_nombre();
     int get_edad();
     float get_estrellas();
-    int get_contrato();
+    int get_lastimado();
+    
 
-    
-    void set_nombre(string);
-    void set_edad(int);
-    void set_estrellas(float);
-    void set_contrato(int);
- 
-    
-    
 };
 
-string JugadorNacional::get_nombre(){
+string Jugador::get_nombre(){
     return nombre;
 }
 
-int JugadorNacional::get_edad(){
+int Jugador::get_edad(){
     return edad;
 }
 
-float JugadorNacional::get_estrellas(){
+float Jugador::get_estrellas(){
     return estrellas;
+
 }
+
+int Jugador::get_lastimado(){
+    return lastimado;
+}
+
+
+class JugadorNacional:public Jugador{
+    
+private:
+    
+    int contrato;
+    int añosCont;
+    
+public:
+    
+    JugadorNacional():Jugador(),contrato(0),añosCont(0){};
+    JugadorNacional(string nom, int ed, float est, bool last, int cont, int año):Jugador(nom,ed,est,last),contrato(cont),añosCont(año){};
+    
+    int get_contrato();
+    int get_gasto();
+    string toString();
+    int get_años();
+};
 
 int JugadorNacional::get_contrato(){
     return contrato;
 }
 
-void JugadorNacional::set_nombre(string nameN){
-    nombre=nameN;
+int JugadorNacional::get_gasto(){
+    int total=0;
+    
+    total=contrato*añosCont;
+    
+    return total;
 }
 
-void JugadorNacional::set_edad(int ageN){
-    edad=ageN;
-}
-void JugadorNacional::set_estrellas(float ratingN){
-    estrellas=ratingN;
-}
-void JugadorNacional::set_contrato(int contratoN){
-contrato=contratoN;
+int JugadorNacional::get_años(){
+    return añosCont;
 }
 
-class JugadorInternacional{
+string JugadorNacional::toString(){
+    stringstream aux;
+    
+    aux<<"Nombre: "<<get_nombre()<<endl<<"Edad: "<<get_edad()<<endl<<"Estrellas: "<<get_estrellas()<<endl<<"Lastimado: "<<get_lastimado()<<endl<<"Contrato por año: "<<get_contrato()<<endl<<"Duración del contrato: "<<get_años()<<endl;
+    return aux.str();
+}
+
+
+
+
+//-----------Clase hija jugador internacional----------------
+class JugadorInternacional:public Jugador{
     
 private:
     
-    string nombre;
-    int edad;
-    float estrellas;
     int contrato;
+    int añosCont;
 
 public:
-    JugadorInternacional():nombre(""),edad(0),estrellas(0.0),contrato(0.0){};
-    JugadorInternacional(string nameI,int ageI, float ratingI, int contratoI):nombre(nameI),edad(ageI),estrellas(ratingI),contrato(contratoI){};
+    JugadorInternacional():Jugador(),contrato(0){};
+    JugadorInternacional(string nom, int eda, float est, bool las, int cont, int años):Jugador(nom,eda,est,las),contrato(cont),añosCont(años){};
     
-    string get_nombre();
-    int get_edad();
-    float get_estrellas();
     int get_contrato();
-    
-    void set_nombre(string);
-    void set_edad(int);
-    void set_estrellas(float);
-    void set_contrato(int);
-    
+    int get_gasto();
+    string toString();
+    int get_años();
+
 };
     
-string JugadorInternacional::get_nombre(){
-    return nombre;
-}
-int JugadorInternacional::get_edad(){
-    return edad;
-}
-float JugadorInternacional::get_estrellas(){
-    return estrellas;
-}
 int JugadorInternacional::get_contrato(){
     return contrato;
 }
 
-void JugadorInternacional::set_nombre(string nameI){
-    nombre=nameI;
-}
-void JugadorInternacional::set_edad(int ageI){
-    edad=ageI;
-}
-void JugadorInternacional::set_estrellas(float ratingI){
-    estrellas=ratingI;
-}
-void JugadorInternacional::set_contrato(int contratoI){
-    contrato=contratoI;
+int JugadorInternacional::get_gasto(){
+    int total=0;
+    
+    total=contrato*añosCont;
+    
+    return total;
 }
 
-class JugadorNovato{
+string JugadorInternacional::toString(){
+    stringstream aux;
+    
+    aux<<"Nombre: "<<get_nombre()<<endl<<"Edad: "<<get_edad()<<endl<<"Estrellas: "<<get_estrellas()<<endl<<"Lastimado: "<<get_lastimado()<<endl<<"Contrato por año: "<<get_contrato()<<endl<<"Duración del contrato: "<<get_años()<<endl;
+    return aux.str();
+}
+
+int JugadorInternacional::get_años(){
+    return añosCont;
+}
+
+//----------Clase hija Jugador Novato---------
+class JugadorNovato:public Jugador{
     
 private:
-    string nombre;
-    int edad;
-    float estrellas;
+   
     int colegiatura;
+    int añosRestantes;
     
 public:
-    JugadorNovato():nombre(""),edad(0),estrellas(0.0),colegiatura(0){};
-    JugadorNovato(string name, int age, float rating, int beca):nombre(name),edad(age),estrellas(rating),colegiatura(beca){};
+    JugadorNovato():Jugador(),colegiatura(0), añosRestantes(0){};
+    JugadorNovato(string nom, int eda, float est, bool las, int col, int semes):Jugador(nom,eda,est,las),colegiatura(col),añosRestantes(semes){};
     
-    string get_nombre();
-    int get_edad();
-    float get_estrellas();
+    
+    int get_colXaño();
+    int get_gast();
+    string toString();
     int get_colegiatura();
+    int get_años();
     
-    void set_nombre(string);
-    void set_edad(int);
-    void set_estrellas(float);
-    void set_colegiatura(int);
     
 };
 
-string JugadorNovato::get_nombre(){
-    return nombre;
+int JugadorNovato::get_colXaño(){
+    int total = 0;
+    int costoAño = 250000;
+    
+    total= costoAño*(colegiatura/100.0);
+    
+    return total;
 }
 
-int JugadorNovato::get_edad(){
-    return edad;
+int JugadorNovato::get_gast(){
+    int total = 0;
+    
+    total = get_colXaño()*añosRestantes;
+    
+    return total;
 }
 
-float JugadorNovato::get_estrellas(){
-    return estrellas;
-}
 int JugadorNovato::get_colegiatura(){
     return colegiatura;
 }
-void JugadorNovato::set_nombre(string name){
-    nombre=name;
-}
-void JugadorNovato::set_edad(int age){
-    edad=age;
-}
-void JugadorNovato::set_estrellas(float rating){
-    estrellas=rating;
-}
-void JugadorNovato::set_colegiatura(int beca){
-    colegiatura=beca;
+
+int JugadorNovato::get_años(){
+    return añosRestantes;
 }
 
+string JugadorNovato::toString(){
+        stringstream aux;
+        
+        aux<<"Nombre: "<<get_nombre()<<endl<<"Edad: "<<get_edad()<<endl<<"Estrellas: "<<get_estrellas()<<endl<<"Lastimado: "<<get_lastimado()<<endl<<"Porcentaje de beca: "<<get_colegiatura()<<"%"<<endl<<"Años de carrera restantes: "<<get_años()<<endl;
+        return aux.str();
+}
 #endif /* Jugadores_h */
 
