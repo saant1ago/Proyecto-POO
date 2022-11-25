@@ -18,7 +18,7 @@ using namespace std;
 //Creamos la clase padre de Jugador
 class Jugador{
     
-protected:
+protected: //Protected para que las clases hijas puedan acceder
 
 //Sus atributos serán nombre,edad,estrellas y si esta lastimado o no
     string nombre;
@@ -30,7 +30,7 @@ public:
 //Constructor vacio y constructor que si recibe parametros
     Jugador():nombre(""),edad(0),estrellas(0.0),lastimado(false){};
     Jugador(string nom,int ed, float est, bool las):nombre(nom),edad(ed),estrellas(est),lastimado(las){};
-    
+//Métodos que permiten acceder a los atributos
     string get_nombre();
     int get_edad();
     float get_estrellas();
@@ -38,6 +38,8 @@ public:
     
 
 };
+
+//Especificamos los métodos como getters
 
 string Jugador::get_nombre(){
     return nombre;
@@ -56,19 +58,21 @@ int Jugador::get_lastimado(){
     return lastimado;
 }
 
-
-class JugadorNacional:public Jugador{
+//Clase hija Jugador Nacional
+class JugadorNacional:public Jugador{//Hereda los atributos y métodos de la clase Jugador
     
-private:
+private:    //Atributos
     
     int contrato;
     int añosCont;
     
 public:
     
+    //Constructor default y el que si recibe parámetros
     JugadorNacional():Jugador(),contrato(0),añosCont(0){};
     JugadorNacional(string nom, int ed, float est, bool last, int cont, int año):Jugador(nom,ed,est,last),contrato(cont),añosCont(año){};
     
+    //Getters y toString
     int get_contrato();
     int get_gasto();
     string toString();
@@ -79,7 +83,7 @@ int JugadorNacional::get_contrato(){
     return contrato;
 }
 
-int JugadorNacional::get_gasto(){
+int JugadorNacional::get_gasto(){//Calcula el gasto total del jugador durante la duracion de su contrato
     int total=0;
     
     total=contrato*añosCont;
@@ -91,7 +95,7 @@ int JugadorNacional::get_años(){
     return añosCont;
 }
 
-string JugadorNacional::toString(){
+string JugadorNacional::toString(){//Guardamos su información en un toString
     stringstream aux;
     
     aux<<"Nombre: "<<get_nombre()<<endl<<"Edad: "<<get_edad()<<endl<<"Estrellas: "<<get_estrellas()<<endl<<"Lastimado: "<<get_lastimado()<<endl<<"Contrato por año: "<<get_contrato()<<endl<<"Duración del contrato: "<<get_años()<<endl;
@@ -102,17 +106,21 @@ string JugadorNacional::toString(){
 
 
 //-----------Clase hija jugador internacional----------------
-class JugadorInternacional:public Jugador{
+class JugadorInternacional:public Jugador{//Hereda los atributos y métodos de la clase Jugador
     
 private:
     
+    //Atributos
     int contrato;
     int añosCont;
 
 public:
+    
+    //Constructor default y el que si recibe parámetros
     JugadorInternacional():Jugador(),contrato(0){};
     JugadorInternacional(string nom, int eda, float est, bool las, int cont, int años):Jugador(nom,eda,est,las),contrato(cont),añosCont(años){};
     
+    //Getters y toString
     int get_contrato();
     int get_gasto();
     string toString();
@@ -124,7 +132,7 @@ int JugadorInternacional::get_contrato(){
     return contrato;
 }
 
-int JugadorInternacional::get_gasto(){
+int JugadorInternacional::get_gasto(){//Calcula el gasto total del jugador durante la duracion de su contrato
     int total=0;
     
     total=contrato*añosCont;
@@ -132,7 +140,7 @@ int JugadorInternacional::get_gasto(){
     return total;
 }
 
-string JugadorInternacional::toString(){
+string JugadorInternacional::toString(){//Guardamos su información en un toString
     stringstream aux;
     
     aux<<"Nombre: "<<get_nombre()<<endl<<"Edad: "<<get_edad()<<endl<<"Estrellas: "<<get_estrellas()<<endl<<"Lastimado: "<<get_lastimado()<<endl<<"Contrato por año: "<<get_contrato()<<endl<<"Duración del contrato: "<<get_años()<<endl;
@@ -144,18 +152,22 @@ int JugadorInternacional::get_años(){
 }
 
 //----------Clase hija Jugador Novato---------
-class JugadorNovato:public Jugador{
+class JugadorNovato:public Jugador{//Hereda los atributos y métodos de la clase Jugador
     
 private:
    
+    //Atributos
     int colegiatura;
     int añosRestantes;
     
 public:
+    
+    //Constructor default y el que si recibe parámetros
     JugadorNovato():Jugador(),colegiatura(0), añosRestantes(0){};
     JugadorNovato(string nom, int eda, float est, bool las, int col, int semes):Jugador(nom,eda,est,las),colegiatura(col),añosRestantes(semes){};
     
     
+    //Getters y toString
     int get_colXaño();
     int get_gast();
     string toString();
@@ -165,7 +177,7 @@ public:
     
 };
 
-int JugadorNovato::get_colXaño(){
+int JugadorNovato::get_colXaño(){//Calcula el gasto de colegiatura por año
     int total = 0;
     int costoAño = 250000;
     
@@ -174,7 +186,7 @@ int JugadorNovato::get_colXaño(){
     return total;
 }
 
-int JugadorNovato::get_gast(){
+int JugadorNovato::get_gast(){//Calcula el gasto total
     int total = 0;
     
     total = get_colXaño()*añosRestantes;
@@ -190,7 +202,7 @@ int JugadorNovato::get_años(){
     return añosRestantes;
 }
 
-string JugadorNovato::toString(){
+string JugadorNovato::toString(){//Guarda información en un toString
         stringstream aux;
         
         aux<<"Nombre: "<<get_nombre()<<endl<<"Edad: "<<get_edad()<<endl<<"Estrellas: "<<get_estrellas()<<endl<<"Lastimado: "<<get_lastimado()<<endl<<"Porcentaje de beca: "<<get_colegiatura()<<"%"<<endl<<"Años de carrera restantes: "<<get_años()<<endl;

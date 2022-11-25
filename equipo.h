@@ -20,15 +20,16 @@ class equipo{
     
 private:
     
+    //Listas donde se van a guardar nuestros objetos
     JugadorNovato novatos[100];
     JugadorNacional nacionales[100];
     JugadorInternacional internacionales[100];
     
-    int iNovatos,iNacionales,iInternacionales;
+    int iNovatos,iNacionales,iInternacionales; //Indicadores para saber en donde guardar los objetos
     
 public:
     
-    
+    //Constructor default
     equipo():iNovatos(0),iNacionales(0),iInternacionales(0){};
     void preRoster();
     void mostrarEquipo();
@@ -50,6 +51,8 @@ public:
 void equipo::preRoster(){
     
     
+    
+    //LLena las listas con 2 jugadores de cada tipo y agrega +1 a los indicadores
     novatos[0]= JugadorNovato("Raul",19,4.3,false,50,4);
     iNovatos++;
     novatos[1]= JugadorNovato("Adrián",21,4.0,false,30,3);
@@ -70,6 +73,7 @@ void equipo::mostrarEquipo(){
     cout<<"___________Roster Actual___________"<<endl;
     cout<<endl;
     
+    //Con un ciclo for recorre las listas y muestra la información de los objetos guardado en el toString
     
     for(int i=0;i<iNovatos;i++){
         cout<<novatos[i].toString();
@@ -90,6 +94,8 @@ void equipo::mostrarEquipo(){
 
 void equipo::mostrarNacionales(){
     
+    //Un ciclo for para recorrer solo la lista de los jugadores nacionales
+    
     cout<<"________Jugadores Nacionales_______"<<endl;
     cout<<endl;
     
@@ -100,6 +106,8 @@ void equipo::mostrarNacionales(){
 }
 
 void equipo::mostrarInternacionales(){
+    
+    //Un ciclo for para recorrer solo la lista de los jugadores internacionales
     
     cout<<"_______Jugadores Internacionales______"<<endl;
     cout<<endl;
@@ -113,6 +121,8 @@ void equipo::mostrarInternacionales(){
 
 void equipo::mostrarNovatos(){
     
+    //Un ciclo for para recorrer solo la lista de los jugadores novatos
+    
     cout<<"______Jugadores Novatos__________"<<endl;
     cout<<endl;
     
@@ -123,6 +133,8 @@ void equipo::mostrarNovatos(){
 }
 
 void equipo::mostrarGastosCol(){
+    
+    //Un ciclo for recorre la lista de los novatos y agrega a una variable total el gasto de la beca
     
     cout<<"________Gastos por colegiatura________"<<endl;
     cout<<endl;
@@ -137,6 +149,8 @@ void equipo::mostrarGastosCol(){
 }
 
 void equipo::mostrarGastosCont(){
+    
+    //Un ciclo for recorre la lista de los nacionales e internacionales para guardar en una variable total el gasto por contratos
     
     cout<<"________Gastos por contratos_________"<<endl;
     cout<<endl;
@@ -156,6 +170,8 @@ void equipo::mostrarGastosCont(){
 }
 
 void equipo::mostrarPromEst(){
+    
+    //Un ciclo for recorre las listas para sacar el promedio de estrellas
     
     cout<<"________Promedio de estrellas del equipo__________"<<endl;
     cout<<endl;
@@ -188,6 +204,8 @@ void equipo::mostrarPromEst(){
 
 void equipo::mostrarPromEd(){
     
+    //Un ciclo for recorre las listas para sacar el promedio de edad
+    
     cout<<"______Promedio de edad del equipo________"<<endl;
     cout<<endl;
     
@@ -217,6 +235,8 @@ void equipo::mostrarPromEd(){
 }
 
 void equipo::mostrarLast(){
+    
+    //Un ciclo for recorre las listas y si detecta un jugador lastimado, lo agrega a la lista y la muestra
     
     cout<<"_________Lista de lastimados________"<<endl;
     cout<<endl;
@@ -283,17 +303,28 @@ void equipo::mostrarLast(){
 
 void equipo::agregaInt(string nom, int ed, float est, bool last, int cont, int año){
     
+    
+    cout<<"_______Agregar Internacional_______"<<endl;
+    cout<<endl;
+    //Llama al constructor para agregar un jugador internacional
+    
     internacionales[iInternacionales]=JugadorInternacional(nom,ed,est,last,cont,año);
     iInternacionales++;
 }
 
 void equipo::agregaNac(string nom, int ed, float est, bool last, int cont, int año){
     
+    cout<<"_______Agregar Nacional_______"<<endl;
+    cout<<endl;
+    
+    //Llama al constructor para agregar un jugador nacional
     nacionales[iNacionales]=JugadorNacional(nom,ed,est,last,cont,año);
     iNacionales++;
 }
 
 void equipo::agregaNov(string nom, int ed, float est, bool last, int col, int semes){
+    
+    //Llama al constructor para agregar un jugador novato
     cout<<"_______Agregar Novato_______"<<endl;
     cout<<endl;
     novatos[iNovatos]=JugadorNovato(nom,ed,est,last,col,semes);
@@ -301,6 +332,8 @@ void equipo::agregaNov(string nom, int ed, float est, bool last, int col, int se
 }
 
 void equipo::mostrarProspect(){
+    
+    //Muestra una lista de Jugadores ya hecha y dependiendo del numero que escoja el usuario es el jugador que se va a agregar
     
     int opcion;
     

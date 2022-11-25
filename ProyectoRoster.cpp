@@ -12,6 +12,7 @@ using namespace std;
 
 void menu(){
     
+    //Creamos la función menu para mostrar al usuario las diferentes opciones
     cout << "Menu:"<<endl;
     cout << "1. Mostrar Equipo"<<endl;
     cout << "2. Mostrar jugadores nacionales"<<endl;
@@ -33,14 +34,19 @@ void menu(){
 int main(){
     
     
+    //Creamos el objeto equipo
     equipo equipo;
+    
+    //Llenamos las listas
     equipo.preRoster();
+    
+    //Variables para guardar los inputs
     string n;
     int e,c,a,opcion=0;
     float es;
     bool l;
     
-    while(opcion < 14 && opcion > -1){
+    while(opcion < 14 && opcion > -1){ //Ciclo while que hace que permite que el usuario pueda elejir multiples opciones
         
         menu();
         cin>>opcion;
@@ -76,6 +82,7 @@ int main(){
             case 10:
                 equipo.mostrarLast();
                 break;
+                
             case 11:
                 cout<<"Nombre del jugador"<<endl;
                 cin>>n;
@@ -126,18 +133,13 @@ int main(){
                 cout<<"Cuantos años de estudio"<<endl;
                 cin>>a;
                 
-                equipo.agregaNac(n, e, es, l, c, a);
+                equipo.agregaNov(n, e, es, l, c, a);
                 
                 break;
         }
         
         
     }
-    
-    
-   
-    
-    
     
     return 0;
 }
