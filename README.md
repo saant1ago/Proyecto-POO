@@ -27,11 +27,11 @@ Diagrama UML (ProyectoUML.png)
 
 Implementa SICT0303A
 
-Linea 51, 304, 315, 325 equipo.h (Composición)_____________________________________________________
-Línea 62, 109, 155 Jugadores.h (Herencia)_____________________________________________________
-Línea 24,25,26,27 Jugadores.h (Encapsulamiento)_____________________________________________________
-Línea 31,32,72,73,120,121 (Constructores)_____________________________________________________
-Línea 34,35,36,37,76,77,78,79 (getters y to string)_____________________________________________________
+Linea 51, 304, 315, 325 equipo.h (Composición)......
+Línea 62, 109, 155 Jugadores.h (Herencia)......
+Línea 24,25,26,27 Jugadores.h (Encapsulamiento)......
+Línea 31,32,72,73,120,121 (Constructores)......
+Línea 34,35,36,37,76,77,78,79 (getters y to string)......
 
 Estándares   SICT0401A
 
