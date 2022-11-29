@@ -22,16 +22,16 @@ Sub-competencias a evaluar y donde encontrar la evidencia
 Toma de decisiones
 SICT0302A
 
-- Diagrama UML (ProyectoUML.png)
+Diagrama UML (ProyectoUML.png)
 
 
 Implementa SICT0303A
 
--Linea 51, 304, 315, 325 equipo.h (Composición)
--Línea 62, 109 155 Jugadores.h (Herencia)
--Línea 24,25,26,27 Jugadores.h (Encapsulamiento)
--Línea 31,32,72,73,120,121 (Constructores)
--Línea 34,35,36,37,76,77,78,79 (getters y to string)
+Linea 51, 304, 315, 325 equipo.h (Composición)
+Línea 62, 109 155 Jugadores.h (Herencia)
+Línea 24,25,26,27 Jugadores.h (Encapsulamiento)
+Línea 31,32,72,73,120,121 (Constructores)
+Línea 34,35,36,37,76,77,78,79 (getters y to string)
 
 Estándares   SICT0401A
 
