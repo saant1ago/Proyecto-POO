@@ -17,5 +17,34 @@ Se agregó el diagrama ULM demostrando de manera sencilla los atributos y métod
 
 Se agregó el parámetro de lastimado. Así mismo se agregó el método para la lista de lastimados. Se implementó la clase equipo la cual contiene los objetos de jugadores creados. Así mismo se agregaron y corrigieron los métodos para que tuvieran sentido con el objetivo del programa. Se modificó el diagrama de UML para que tuviera coherencia con el proyecto
 
+Sub-competencias a evaluar y donde encontrar la evidencia 
+
+Toma de decisiones
+SICT0302A
+
+- Diagrama UML (ProyectoUML.png)
+
+
+Implementa SICT0303A
+
+-Linea 51, 304, 315, 325 equipo.h (Composición)
+-Línea 62, 109 155 Jugadores.h (Herencia)
+-Línea 24,25,26,27 Jugadores.h (Encapsulamiento)
+-Línea 31,32,72,73,120,121 (Constructores)
+-Línea 34,35,36,37,76,77,78,79 (getters y to string)
+
+Estándares   SICT0401A
+
+Se puede observar una estructura ordenada en todo el programa así como se utilizaron comentarios para explicar ciertas partes del código
+
+En este readme se puede encontrar un resumen del proyecto así como su funcionalidad, los cambios y como compilar
+
+Tecnologías  SEG0702A
+
+Se usó correctamente github subiendo cada semana las versiones corregidas de los archivos
+
+
+
+#Para compilar
 Para compliar en Mac compilar el archivo ProyectoRoster.cpp (g++ ProyectoRoster.cpp) y luego ejecutar el archivo generado (./a.out)
 *Descargar los archvios y asegurarse de que todos esten en la misma carpeta para asegurar el correcto funcionamento*
