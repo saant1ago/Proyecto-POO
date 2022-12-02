@@ -9,6 +9,10 @@ El equipo de futbol americano de la universidad esta por empezar una nueva tempo
 
 La plataforma separa a los jugadores nacionales,internacionales y novatos. Esto es debido a que a los jugadores nacionales e internacionales se les tiene que dar contratos para que jueguen y a los novatos se les tiene que dar una colegiatura. Así mismo, cada jugador es tiene una calificación que se mide con estrellas del 1 al 5. La plataforma podrá mostrar el equipo completo, a los jugadores nacionales, internacionales y novatos que lo componen, el promedio de estrellas del equipo así como el promedio de la edad. También se podrán consultar los gastos y la lista de jugadores lastimados. También se pueden agregar jugadores.
 
+#Como usar
+
+Al correr el programa se desplegará el menú y tendrás que elegir el número de la acción que deseas realizar. Hay que recordar que para indicar que un jugador esta lastimado es con un 1 y si no lo esta es con un 0 así como las estrellas de los jugadores van de 1 (muy malo) hasta 5 (excelente)
+
 #Cambios entrega #2
 
 Se agregó el diagrama ULM demostrando de manera sencilla los atributos y métodos de cada clase, así como las herencias y composiciones. Así mismo se corrigió el código para agregar los contratos a los jugadores novatos y nacionales para darle coherencia con el ULM. Nota: Todavía no esta implementada la herencia ni composición en el código, así como la clase equipo, sin embargo ya esta implementada en el ULM para agregarlo al código en la próxima entrega.
