@@ -51,6 +51,8 @@ int main(){
         menu();
         cin>>opcion;
         
+        
+        //Switch para que se corra la función que haya elegido el usuario
         switch (opcion) {
             case 1:
                 equipo.mostrarEquipo();
@@ -82,8 +84,8 @@ int main(){
             case 10:
                 equipo.mostrarLast();
                 break;
-                
             case 11:
+                //Le pedimos al usuario la información del jugador que desea agregar y las guardamos en las variables
                 cout<<"Nombre del jugador"<<endl;
                 cin>>n;
                 cout<<"Edad del jugador"<<endl;
@@ -101,6 +103,7 @@ int main(){
                 break;
                 
             case 12:
+                //Le pedimos al usuario la información del jugador que desea agregar y las guardamos en las variables
                 cout<<"Nombre del jugador"<<endl;
                 cin>>n;
                 cout<<"Edad del jugador"<<endl;
@@ -119,7 +122,7 @@ int main(){
                 break;
                 
             case 13:
-                
+                //Le pedimos al usuario la información del jugador que desea agregar y las guardamos en las variables
                 cout<<"Nombre del jugador"<<endl;
                 cin>>n;
                 cout<<"Edad del jugador"<<endl;

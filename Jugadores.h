@@ -58,7 +58,9 @@ int Jugador::get_lastimado(){
     return lastimado;
 }
 
-//Clase hija Jugador Nacional
+//No se agregan setters porque no me interesa cambiar los datos de los jugadores una vez ingresados
+
+//______________________Clase hija Jugador Nacional___________________________
 class JugadorNacional:public Jugador{//Hereda los atributos y métodos de la clase Jugador
     
 private:    //Atributos
@@ -177,7 +179,7 @@ public:
     
 };
 
-int JugadorNovato::get_colXaño(){//Calcula el gasto de colegiatura por año
+int JugadorNovato::get_colXaño(){//Calcula el gasto de colegiatura por año y lo regresa
     int total = 0;
     int costoAño = 250000;
     
@@ -186,7 +188,7 @@ int JugadorNovato::get_colXaño(){//Calcula el gasto de colegiatura por año
     return total;
 }
 
-int JugadorNovato::get_gast(){//Calcula el gasto total
+int JugadorNovato::get_gast(){//Calcula el gasto total y lo regresa
     int total = 0;
     
     total = get_colXaño()*añosRestantes;

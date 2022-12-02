@@ -20,7 +20,7 @@ class equipo{
     
 private:
     
-    //Listas donde se van a guardar nuestros objetos
+    //Listas donde se van a guardar nuestros objetos con limite de 100
     JugadorNovato novatos[100];
     JugadorNacional nacionales[100];
     JugadorInternacional internacionales[100];
@@ -31,6 +31,7 @@ public:
     
     //Constructor default
     equipo():iNovatos(0),iNacionales(0),iInternacionales(0){};
+    //Declaramos los métodos de la clase
     void preRoster();
     void mostrarEquipo();
     void mostrarNacionales();
@@ -171,7 +172,7 @@ void equipo::mostrarGastosCont(){
 
 void equipo::mostrarPromEst(){
     
-    //Un ciclo for recorre las listas para sacar el promedio de estrellas
+    //Un ciclo for recorre las listas para sacar la suma de las estrellas del equipo y dividirlo entre el numero de jugadores que haya
     
     cout<<"________Promedio de estrellas del equipo__________"<<endl;
     cout<<endl;
@@ -204,7 +205,7 @@ void equipo::mostrarPromEst(){
 
 void equipo::mostrarPromEd(){
     
-    //Un ciclo for recorre las listas para sacar el promedio de edad
+    //Un ciclo for recorre las listas para sacar la suma de las edades y dividirlo entre el número de jugadores
     
     cout<<"______Promedio de edad del equipo________"<<endl;
     cout<<endl;
